@@ -9,7 +9,6 @@ import { GifsService } from '../../services/gifs.service';
       class="form-control"
       placeholder="Buscar gifs..."
       (keyup.enter)="searchTag()"
-
       >
   `
 })
@@ -18,7 +17,6 @@ export class SearchBoxComponent {
   @ViewChild('txtTagInput')
   public tagInput!: ElementRef<HTMLInputElement>;
 
-
   constructor( private gifsService: GifsService ) { }
 
   public searchTag(): void {
@@ -26,6 +24,4 @@ export class SearchBoxComponent {
     this.gifsService.searchTag( newTag );
     this.tagInput.nativeElement.value = '';
   }
-
-
 }
